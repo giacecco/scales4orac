@@ -1,4 +1,4 @@
-#N canvas 921 221 488 672 12;
+#N canvas 1036 171 488 672 12;
 #X text 89 194 this is the note corresponding to the Organelle's leftmost
 key, f 32;
 #X obj 23 239 -, f 1;
@@ -9,9 +9,6 @@ key, f 32;
 #X text 51 402 This is the number of semitones in the current major
 scale;
 #X obj 23 440 tabread scale-natural-major-inverted;
-#X obj 22 144 inlet $noteIn;
-#X obj 23 479 outlet $notePosition;
-#X obj 190 478 outlet $octaveNumber;
 #X msg 53 193 60;
 #X msg 95 289 12;
 #X text 22 10 Given an input MIDI pitch number from an Organelle \,
@@ -20,15 +17,18 @@ and the octave number of where in the keyboard it was pressed. If the
 key pressed was black \, the returned key position is -1 E.g. if the
 note in is 72 \, C4 is being pressed on the Organelle and the function
 returns 0 \, 1 (first key \, second octave).;
+#X obj 22 144 inlet;
+#X obj 23 479 outlet;
+#X obj 191 480 outlet;
 #X connect 1 0 2 0;
 #X connect 1 0 5 0;
-#X connect 1 0 12 0;
+#X connect 1 0 9 0;
 #X connect 2 0 4 0;
-#X connect 4 0 10 0;
+#X connect 4 0 13 0;
 #X connect 5 0 7 0;
-#X connect 7 0 9 0;
-#X connect 8 0 11 0;
-#X connect 8 0 1 0;
-#X connect 11 0 1 1;
-#X connect 12 0 2 1;
-#X connect 12 0 5 1;
+#X connect 7 0 12 0;
+#X connect 8 0 1 1;
+#X connect 9 0 2 1;
+#X connect 9 0 5 1;
+#X connect 11 0 8 0;
+#X connect 11 0 1 0;
